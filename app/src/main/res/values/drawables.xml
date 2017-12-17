@@ -1,0 +1,6 @@
+<resources>
+    <item name="ic_menu_sleep" type="drawable">@android:drawable/ic_menu_recent_history</item>
+    <item name="ic_menu_compute" type="drawable">@android:drawable/ic_menu_crop</item>
+    <item name="ic_menu_io" type="drawable">@android:drawable/ic_menu_gallery</item>
+    <item name="ic_menu_webview" type="drawable">@android:drawable/ic_menu_mapmode</item>
+</resources>

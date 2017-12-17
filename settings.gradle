@@ -1,0 +1,19 @@
+include ':app'
+include ':anime'
+
+def initGradleEnvironment() {
+    println "Initialize Gradle Environment started."
+    Properties properties = new Properties()
+    File propertyFile = new File(rootDir.getAbsolutePath() + "/local.properties")
+    properties.load(propertyFile.newDataInputStream())
+
+    gradle.ext.compileSdk = properties.getProperty('compileSdk')
+    gradle.ext.minSdk = properties.getProperty('minSdk')
+    gradle.ext.targetSdk = properties.getProperty('targetSdk')
+    gradle.ext.buildTools = properties.getProperty('buildTools')
+    gradle.ext.gradleRepDir = properties.getProperty('gradleRepDir')
+    gradle.ext.sdkDir = properties.getProperty('sdkDir')
+    println "Initialize Gradle Environment finished."
+}
+
+initGradleEnvironment()

@@ -1,0 +1,28 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion Integer.valueOf(gradle.compileSdk)
+    buildToolsVersion gradle.buildTools
+    defaultConfig {
+        minSdkVersion Integer.valueOf(gradle.minSdk)
+        targetSdkVersion Integer.valueOf(gradle.targetSdk)
+        applicationId "io.qivaz.demo"
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':anime')
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
+}
